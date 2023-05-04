@@ -15,7 +15,7 @@ public import uim.oop;
 public import uim.html;
 // public import uim.json;
 public import uim.javascript;
-public import uim.entities;
+public import uim.models;
 
 // public import uim.web.components;
 // public import uim.web.entities;
