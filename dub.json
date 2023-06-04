@@ -1,4 +1,6 @@
 {
+	"license": "Apache-2.0",
+	"name": "uim-web",
 	"authors": [
 		"UI Manufaktur Team"
 	],
@@ -8,31 +10,29 @@
 		"vibe-d": "~>0.9.5"
 	},
 	"description": "D Library for web server",
+	"targetType": "library",
 	"importPaths": [
 		"../uim-core",
 		"../uim-oop",
 		"../uim-css",
 		"../uim-html",
-		"../uim-javascript",
+		"../../LANGS/lang-javascript",
 		"../uim-json",
 		"../uim-jsonbase",
 		"../uim-entities",
 		"../uim-entitybase",
 		"./"
 	],
-	"license": "Apache-2.0",
-	"name": "uim-web",
 	"sourcePaths": [
 		"../uim-core",
 		"../uim-oop",
 		"../uim-css",
 		"../uim-html",
-		"../uim-javascript",
+		"../../LANGS/lang-javascript",
 		"../uim-json",
 		"../uim-jsonbase",
 		"../uim-entities",
 		"../uim-entitybase",
 		"./"
-	],
-	"targetType": "library"
+	]
 }
