@@ -95,11 +95,9 @@
         override string content(string[string] someParameters = null) {  
           string inners;
 
-          foreach(page; pages) {
-            if (page.name == "index") continue;
-            if (page.name == "error") continue;
-            
-            inners ~= webEntry(page); 
+          pages
+            .filter!(p => p.name != "index" && p.name != "error")
+            .each!(p => inners ~= webEntry(p)); 
         }
 
         return 

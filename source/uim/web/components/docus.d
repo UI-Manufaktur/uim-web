@@ -109,11 +109,8 @@ void addDocuTheme(DAPPApplication app, string theme, DAPPPageController[] pages)
 } 
 
 string docusThemesButtons(string[] themes) {
-  string result;
-
-  foreach(theme; themes.sort) {
-    result ~= BS5ButtonLink(["btn-default btn-sm me-1"], ["href":"/documentations/"~theme.toLower], theme).toString;
-  }
-
-  return result;
+  return themes
+    .sort
+    .map!(t => BS5ButtonLink(["btn-default btn-sm me-1"], ["href":"/documentations/"~t.toLower], t).toString)
+    .join();
 } */

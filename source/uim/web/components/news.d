@@ -96,11 +96,9 @@ void addNewsTheme(DAPPApplication app, string theme, DAPPPageController[] pages)
 } 
 
 string newsThemesButtons(string[] themes) {
-  string result;
-
-  foreach(theme; themes.sort) {
-    result ~= BS5ButtonLink(["btn-default btn-sm me-1"], ["href":"/news/"~theme.toLower], theme).toString;
+  return themes
+    .sort
+    .map!(t => BS5ButtonLink(["btn-default btn-sm me-1"], ["href":"/news/"~t.toLower], t).toString)
+    .join;
   }
-
-  return result;
 } */

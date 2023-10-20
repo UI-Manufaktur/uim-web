@@ -21,22 +21,26 @@ class DCodeEntry {
     result ~= H5P(H5A(["id":this.name, "name":this.name])).toString;
     result ~= `<hr /><p>&nbsp;</p>`;
     result ~= H5H2(
-      (this.uda) ? H5Small(this.uda).toString:"",
+      this.uda 
+        ? H5Small(this.uda).toString
+        :"",
       title).toString;
+      
     result ~= H5P(description).toString;
     if (this.inputs) {
       result ~= H5H3("Eingabe").toString;
 
-      string[] inners;
-      foreach(input; inputs) inners ~= H5Li(input).toString;
-      result ~= H5Ul(inners.join()).toString;
+      string inners = inputs
+        .map!(i => H5Li(i).toString)
+        .join;
+        
+      result ~= H5Ul(inners).toString;
     }
     if (this.outputs) {
       result ~= H5H3("Ausgabe").toString;
 
-      string[] inners;
-      foreach(output; outputs) inners ~= H5Li(output).toString;
-      result ~= H5Ul(inners.join()).toString;
+      string inners = outputs.map!(o = > H5Li(o).toString).join();
+      result ~= H5Ul(inners).toString;
     }
     if (this.examples) {
       result ~= H5H3("Beispiele").toString;
