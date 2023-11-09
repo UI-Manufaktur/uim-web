@@ -78,21 +78,23 @@ class DCodeOverview {
     string results;
 
     results ~= H5H1(this.title).toString;
-    results ~= (this.release) ? H5H3("Release").toString~H5P(this.release).toString : "";
-    results ~= (this.description) ? H5H3("Beschreibung").toString~H5P(this.description).toString : "";
+    results ~= (this.release) 
+      ? H5H3("Release").toString~H5P(this.release).toString 
+      : "";
+    results ~= (this.description) 
+      ? H5H3("Beschreibung").toString~H5P(this.description).toString 
+      : "";
     if (this.imports) {
       results ~= H5H3("Imports").toString;
 
-      string[] inners;
-      foreach(imp; imports) inners ~= H5Li(imp).toString;
-      results ~= H5Ul(inners.join()).toString;
+      string inners = imports.map!(i => H5Li(i).toString).join();
+      results ~= H5Ul(inners).toString;
     }
     if (this.remarks) {
       results ~= H5H3("Anmerkungen").toString;
 
-      string[] inners;
-      foreach(remark; remarks) inners ~= H5Li(remark).toString;
-      results ~= H5Ul(inners.join()).toString;
+      string inners = remarks.map!(r = > H5Li(remark).toString).join;
+      results ~= H5Ul(inners).toString;
     }
     results ~= `<p><a id="overview" name="overview"></a></p><hr /><p>&nbsp;</p>`;
     results ~= `<h2>&Uuml;bersicht</h2>`;
