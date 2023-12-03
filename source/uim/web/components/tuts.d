@@ -33,7 +33,7 @@ import uim.web;
           "pageContent": ``]);
         } 
 				
-      override string content(string[string] someParameters = null) {  
+      override string content(STRINGAA someParameters = null) {  
         string myContent;
         myContent ~= BS5Row(
                       H5Div(["col-sm-12", "col-md-8", "col-lg-10"], 
@@ -79,7 +79,7 @@ void addTutsTheme(DAPPApplication app, string theme, DAPPPageController[] pages)
             "pageContent": ``]);
           } 
           
-        override string content(string[string] someParameters = null) {  
+        override string content(STRINGAA someParameters = null) {  
           auto theme = this.parameters.get("pageTheme", "");
           auto category = this.parameters.get("pageCategory", "");			
           auto image = this.parameters.get("pageImage", "");	

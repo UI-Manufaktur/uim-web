@@ -23,7 +23,7 @@ public import uim.models;
 // public import uim.web.sessions;
 // public import uim.web.sitemaps;
 
-/* string overviewPage(string[string] parameters, DAPPPageController[] pages) {
+/* string overviewPage(STRINGAA parameters, DAPPPageController[] pages) {
   auto myTheme = parameters.get("pageTheme", "");
   auto myCategory = parameters.get("pageCategory", "");			
   auto myImage = parameters.get("pageImage", "");	

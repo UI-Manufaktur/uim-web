@@ -12,7 +12,7 @@ class DCodeEntry {
   mixin(OProperty!("string", "description"));
   mixin(OProperty!("string[]", "inputs"));
   mixin(OProperty!("string[]", "outputs"));
-  mixin(OProperty!("string[string]", "examples"));
+  mixin(OProperty!("STRINGAA", "examples"));
   mixin(OProperty!("string[]", "remarks"));
 
   override string toString() {

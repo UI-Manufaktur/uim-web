@@ -23,7 +23,7 @@
             "pageContent": ``]);
           } 
           
-        override string content(string[string] someParameters = null) {  
+        override string content(STRINGAA someParameters = null) {  
           string inners;
 
           inners ~= themesButtons(themePages.getKeys);
@@ -58,7 +58,7 @@
             "pageContent": ``]);
           } 
           
-        override string content(string[string] someParameters = null) {  
+        override string content(STRINGAA someParameters = null) {  
           string inners;
           inners ~= themesButtons(themePages.getKeys);
 
@@ -92,7 +92,7 @@
             "pageContent": ``]);
           } 
           
-        override string content(string[string] someParameters = null) {  
+        override string content(STRINGAA someParameters = null) {  
           string inners;
 
           pages

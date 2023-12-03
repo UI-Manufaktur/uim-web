@@ -29,7 +29,7 @@ void addMainKeywordPage(DAPPApplication app, DAPPPageController[][string] keywor
           "pageContent": ``]);
         } 
 				
-      override string content(string[string] someParameters = null) {  
+      override string content(STRINGAA someParameters = null) {  
 				string inners;
 
         foreach(kw; keywordPages.getKeys.sort) {
@@ -78,7 +78,7 @@ void addKeywordPage(DAPPApplication app, string keyword, DAPPPageController[] ke
           "pageContent": ``]);
         } 
 				
-      override string content(string[string] someParameters = null) {  
+      override string content(STRINGAA someParameters = null) {  
 				string inners;
 
 				foreach(page; keywordPages) {
