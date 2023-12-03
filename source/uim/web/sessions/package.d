@@ -4,24 +4,30 @@ module uim.web.sessions;
 import uim.web;
 
 auto add(Session session, STRINGAA values) {
-  if (session)
-    foreach(kv; values.byKeyValue) session.set(kv.key, kv.value);
+  if (session) {
+    values.byKeyValue.each!(kv => session.set(kv.key, kv.value));
+  }
+
   return session;
 }
 
 auto removeKeys(Session session, string[] keys...) {
   return removeKeys(session, keys);
 }
+
 auto removeKeys(Session session, string[] keys) {
-  foreach(key; keys) session.remove(key);
+  keys.each!(key => session.remove(key));
+
   return session;
 }
 
 auto removeValues(Session session, string[] values...) {
   return removeKeys(session, values);
 }
+
 auto removeValues(Session session, string[] values) {
-  foreach(value; values) session.remove(value);
+  values.each!(value => session.remove(value));
+
   return session;
 }
 

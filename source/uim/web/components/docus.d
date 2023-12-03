@@ -37,18 +37,14 @@ import uim.web;
             myContent ~= `<div class="row">`;
             myContent ~= `<div class="col-sm-12 col-md-10 col-lg-8">`;               
             myContent ~= `<h1>Unsere Themen in den Dokumentation</h1>`;
-            myContent ~= "</div>";
-            myContent ~= "</div>";
+            myContent ~= "</div></div>";
             myContent ~= `<div class="row">`;
             myContent ~= `<div class="col-sm-12 col-md-10 col-lg-8">`;               
             myContent ~= docusThemesButtons(docusThemes.getKeys);
-            myContent ~= "</div>";
-            myContent ~= "</div>";
+            myContent ~= "</div></div>";
             myContent ~= "<hr>";
             myContent ~= `<div class="row">`;
-            foreach(t, pages; docusThemes) { 
-              myContent ~= webEntries(pages);
-            }
+            docusThemes.byKeyValue.each!(themePages => myContent ~= webEntries(themePage.pages));
             myContent ~= "</div>";
 
 
@@ -62,9 +58,7 @@ import uim.web;
       }
     });
     
-    foreach(theme, pages; docusThemes)
-      addDocuTheme(app, theme, pages);
-
+    docusThemes.byKeyValue.each!(themePage => addDocuTheme(app, themePage.theme, themePage.page));
 } 
 
 void addDocuTheme(DAPPApplication app, string theme, DAPPPageController[] pages) {

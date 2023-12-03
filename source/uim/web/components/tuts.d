@@ -55,8 +55,7 @@ import uim.web;
               BS5Container(H5Div(["section"], myContent)))).toString;       
 	}});
 
-  foreach(t, p; pages)
-      addTutsTheme(app, t, p);
+  pages.byKeyValue.each!(kv => addTutsTheme(app, kv.key, kv.value));
 
 } 
 

@@ -150,8 +150,7 @@ void addBlogThemes(DAPPApplication app, DAPPPageController[][string] blogThemes)
       }
     });
     
-    foreach(theme, pages; blogThemes)
-      addBlogTheme(app, theme, pages);
+    blogThemes.byKeyValue.each!(themePage => addBlogTheme(app, themePage.theme, themePage.page));
 
 } 
 
@@ -198,11 +197,9 @@ void addBlogTheme(DAPPApplication app, string theme, DAPPPageController[] pages)
 } 
 
 string themesButtons(string[] themes) {
-  string result;
-
-  foreach(theme; themes.sort) {
-    result ~= BS5ButtonLink(["btn-default btn-sm me-1"], ["href":"/blogs/"~theme.toLower], theme).toString;
-  }
+  string result = themes.sort
+    .map!(theme => BS5ButtonLink(["btn-default btn-sm me-1"], ["href":"/blogs/"~theme.toLower], theme).toString)
+    .join;
 
   return result;
 }

@@ -49,8 +49,7 @@ import uim.web;
       }
     });
     
-    foreach(theme, pages; newsThemes)
-      addNewsTheme(app, theme, pages);
+    newsThemes.byKeyValue.each!(themePage => addNewsTheme(app, themePage.theme, themePage.page));
 
 } 
 

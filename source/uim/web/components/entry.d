@@ -5,9 +5,9 @@ import uim.web;
 
 
 /* string webEntries(DAPPPageController[] pages) {
-  string result;
-
-  foreach(page; pages) result ~= webEntry(page);
+  string result = pages
+    .map!(page => webEntry(page))
+    .array;
   
   return result;
 }

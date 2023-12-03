@@ -6,8 +6,7 @@ import uim.web;
 /* void addKeywordPages(DAPPApplication app, DAPPPageController[][string] keywordPages) {
   addMainKeywordPage(app, keywordPages);
 
-  foreach(keyword, pages; keywordPages)
-    addKeywordPage(app, keyword, pages);
+  keywordPages.byKeyValue.each!(kv => addKeywordPage(app, kv.key, kv.value));
 }
 
 void addMainKeywordPage(DAPPApplication app, DAPPPageController[][string] keywordPages) {
