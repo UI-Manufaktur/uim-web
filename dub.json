@@ -5,15 +5,14 @@
 		"UI Manufaktur Team"
 	],
 	"copyright": "Copyright © 2015-2023, Ozan Nurettin Süel",
-	"dependencies": {
-		"colored": "~>0.0.23",
-		"vibe-d": "~>0.9.5"
-	},
 	"description": "D Library for web server",
 	"targetType": "library",
+	"dependencies": {
+		"colored": "~>0.0.27",
+		"vibe-d": "~>0.9.7",
+		"uim": "~>24.1.2"
+	},
 	"importPaths": [
-		"../uim-core",
-		"../uim-oop",
 		"../uim-css",
 		"../uim-html",
 		"../../LANGS/lang-javascript",
@@ -24,8 +23,6 @@
 		"./"
 	],
 	"sourcePaths": [
-		"../uim-core",
-		"../uim-oop",
 		"../uim-css",
 		"../uim-html",
 		"../../LANGS/lang-javascript",
