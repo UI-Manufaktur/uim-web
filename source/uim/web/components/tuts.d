@@ -12,7 +12,7 @@ import uim.web;
     auto category = page.parameters.get("pageCategory", "");			
     auto link = categoryToLink(category)~"/"~theme.toLower~"/"~page.name.toLower;	
 
-    app.pages(link[1..$], page);
+    app.pages(link[1..], page);
   } * /
 
   app.pages("tutorials", new class DAPPPageController {
